@@ -2535,4 +2535,11 @@ menu "Custom Package"
 	source "package/cmatrix/Config.in"
 endmenu
 
+menu "Koala Package"
+	source "package/koala-lvgl-app/Config.in"
+	source "package/koala-keyboard/Config.in"
+	source "package/koala-vsomeip/Config.in"
+	source "package/koala-wifi-ble/Config.in"
+endmenu
+
 endmenu

@@ -1,0 +1,4 @@
+config BR2_PACKAGE_KOALA_LVGL_APP
+    bool "Koala LVGL application"
+    help
+        The Koala home application using frame buffer

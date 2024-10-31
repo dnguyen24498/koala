@@ -1,0 +1,5 @@
+config ST7567S_COG
+    tristate "LCD ST7567S 128x64 support"
+    help
+        This driver support LCD ST7567S 128x64
+    default y

@@ -1,0 +1,5 @@
+config MULTY_WAY_5D
+    tristate "5 directions button support"
+    help
+        This driver support 5 directions button
+    default y

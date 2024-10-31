@@ -1,0 +1,17 @@
+# SPDX-License-Identifier: GPL-2.0-only
+#
+# KOALA_PACKAGES configuration
+#
+
+menuconfig KOALA_PACKAGES
+    tristate "Koala packages"
+    help
+        This package includes custom driver for Koala Device
+
+if KOALA_PACKAGES
+
+source "drivers/koala/multy-way-5d/Kconfig"
+
+source "drivers/koala/st7567s-cog/Kconfig"
+
+endif # KOALA_PACKAGES

@@ -32,4 +32,7 @@ dmesg -n 4
 #usb hub control
 #/etc/uhubon.sh host
 
+#koala custom modules
+#insmod /mnt/system/ko/st7567s-cog.ko
+#insmod /mnt/system/ko/multy-way-5d.ko
 exit $?

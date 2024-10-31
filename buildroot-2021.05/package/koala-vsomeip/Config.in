@@ -1,0 +1,10 @@
+config BR2_PACKAGE_KOALA_VSOMEIP
+    bool "Koala VSOME/IP service"
+    depends on BR2_TOOLCHAIN_GCC_AT_LEAST_8
+    select BR2_PACKAGE_CMAKE
+    select BR2_PACKAGE_BOOST
+    select BR2_PACKAGE_BOOST_SYSTEM
+    select BR2_PACKAGE_BOOST_THREAD
+    select BR2_PACKAGE_BOOST_FILESYSTEM
+    help
+      My simple C++ application.

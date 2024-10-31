@@ -1,0 +1,4 @@
+config BR2_PACKAGE_KOALA_WIFI_BLE
+	bool "Koala wifi ble service"
+	help
+		Koala wifi ble service

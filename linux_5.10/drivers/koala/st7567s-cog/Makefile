@@ -1,0 +1,1 @@
+obj-$(CONFIG_ST7567S_COG) += st7567s-cog.o

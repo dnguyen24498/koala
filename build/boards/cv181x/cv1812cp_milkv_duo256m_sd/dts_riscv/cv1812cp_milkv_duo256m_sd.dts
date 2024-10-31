@@ -16,9 +16,24 @@
 
 &spi2 {
 	status = "okay";
+	/delete-node/ spidev@0;
 
-	spidev@0 {
+	st7789v: st7789v@0 {
+		compatible = "sitronix,st7789v";
+		reg = <0>;
 		status = "okay";
+		spi-max-frequency = <48000000>;
+		spi-cpol;
+		spi-cpha;
+		rotate = <0>;
+		fps = <60>;
+		rgb;
+		buswidth = <8>;
+
+		dc = <&porta 24 GPIO_ACTIVE_HIGH>;
+		reset = <&porta 23 GPIO_ACTIVE_HIGH>;
+
+		debug = <0x0>;
 	};
 };
 
@@ -32,6 +47,7 @@
 
 &uart1 {
 	status = "okay";
+	
 };
 
 &uart2 {
@@ -44,5 +60,15 @@
 
 / {
 	model = "Milk-V Duo256M";
+
+	/* nav_button {
+		compatible = "koala,multy-way-5d";
+		up-gpios = <&porta 22 GPIO_ACTIVE_LOW>;
+		down-gpios = <&porta 23 GPIO_ACTIVE_LOW>;
+		left-gpios = <&porta 24 GPIO_ACTIVE_LOW>;
+		right-gpios = <&porta 25 GPIO_ACTIVE_LOW>;
+		center-gpios = <&porta 26 GPIO_ACTIVE_LOW>;
+	}; */
+	
 };
 

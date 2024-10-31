@@ -1,0 +1,1 @@
+obj-$(CONFIG_MULTY_WAY_5D) += multy-way-5d.o

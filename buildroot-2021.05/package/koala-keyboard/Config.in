@@ -1,0 +1,4 @@
+config BR2_PACKAGE_KOALA_KEYBOARD
+    bool "Koala keyboard service"
+    help
+      My simple C++ application.

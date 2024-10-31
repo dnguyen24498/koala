@@ -10,3 +10,8 @@ duo-pinmux -w GP14/GP14 > /dev/null
 # Insmod PWM Module
 insmod /mnt/system/ko/cv181x_pwm.ko
 
+# Run adbd
+/usr/bin/adbd &
+
+# Run vsomeip routingmanagerd
+/usr/bin/routingmanagerd &
