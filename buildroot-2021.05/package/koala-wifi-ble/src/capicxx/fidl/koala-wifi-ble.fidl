@@ -1,0 +1,11 @@
+package com.koala
+
+interface KoalaWifiBle {
+    version { major 1 minor 0 }
+    method turn_on_wifi {
+        in {
+
+        }
+    }
+
+}

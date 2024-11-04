@@ -1,0 +1,5 @@
+config BR2_PACKAGE_KOALA_CAPICXX_CORE_RUNTIME
+    bool "capicxx-core-runtime"
+    help
+        capicxx-core-runtime
+        

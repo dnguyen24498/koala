@@ -1,0 +1,18 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "koala-wifi-ble.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface com.koala.KoalaWifiBle {
+    SomeIpServiceID = 4660
+
+    method turn_on_wifi {
+        SomeIpMethodID = 1000
+        SomeIpReliable = true
+    }
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance com.koala.KoalaWifiBle {
+        InstanceId = "koala-wifi-ble"
+        SomeIpInstanceID = 22136
+    }
+}

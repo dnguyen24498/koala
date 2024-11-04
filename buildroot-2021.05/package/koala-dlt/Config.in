@@ -1,0 +1,4 @@
+config BR2_PACKAGE_KOALA_DLT
+	bool "Koala DLT daemon"
+	help
+		dlt-daemon for Koala project

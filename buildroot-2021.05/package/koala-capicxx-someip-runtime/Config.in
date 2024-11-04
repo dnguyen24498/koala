@@ -1,0 +1,7 @@
+config BR2_PACKAGE_KOALA_CAPICXX_SOMEIP_RUNTIME
+    bool "capicxx someip runtime"
+    select BR2_PACKAGE_KOALA_CAPICXX_CORE_RUNTIME
+    select BR2_PACKAGE_KOALA_DLT
+    select BR2_PACKAGE_KOALA_VSOMEIP
+    help
+        capicxx-someip-runtime

@@ -2536,9 +2536,12 @@ menu "Custom Package"
 endmenu
 
 menu "Koala Package"
+	source "package/koala-dlt/Config.in"
+	source "package/koala-vsomeip/Config.in"
+	source "package/koala-capicxx-core-runtime/Config.in"
+	source "package/koala-capicxx-someip-runtime/Config.in"
 	source "package/koala-lvgl-app/Config.in"
 	source "package/koala-keyboard/Config.in"
-	source "package/koala-vsomeip/Config.in"
 	source "package/koala-wifi-ble/Config.in"
 endmenu
 

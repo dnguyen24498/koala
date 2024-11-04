@@ -51,6 +51,9 @@ function get_toolchain()
 
     [ -f ${toolchain_file} ] && rm -rf ${toolchain_file}
 
+    # Install Java
+    sudo apt install openjdk-17-jdk -y
+
   fi
 }
 

@@ -13,5 +13,9 @@ insmod /mnt/system/ko/cv181x_pwm.ko
 # Run adbd
 /usr/bin/adbd &
 
+# Run dlt-daemon
+
+/usr/bin/dlt-daemon &
+
 # Run vsomeip routingmanagerd
 /usr/bin/routingmanagerd &

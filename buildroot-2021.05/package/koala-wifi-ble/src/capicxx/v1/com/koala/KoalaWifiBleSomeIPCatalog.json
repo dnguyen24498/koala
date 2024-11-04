@@ -1,0 +1,8 @@
+{
+    "com.koala.KoalaWifiBle" : {
+        "service_id": 4660,
+        "instances" : {
+            "koala-wifi-ble": 22136
+        }
+    }
+}

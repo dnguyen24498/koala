@@ -1,0 +1,18 @@
+KOALA_CAPICXX_SOMEIP_RUNTIME_VERSION = 3.2.4
+KOALA_CAPICXX_SOMEIP_RUNTIME_SITE = $(call github,COVESA,capicxx-someip-runtime,$(KOALA_CAPICXX_SOMEIP_RUNTIME_VERSION))
+KOALA_CAPICXX_SOMEIP_RUNTIME_LICENSE = MIT
+KOALA_CAPICXX_SOMEIP_RUNTIME_LICENSE_FILES = LICENSE
+
+# Dependencies
+KOALA_CAPICXX_SOMEIP_RUNTIME_DEPENDENCIES = koala-vsomeip koala-capicxx-core-runtime koala-dlt
+
+# Install to staging
+KOALA_CAPICXX_SOMEIP_RUNTIME_INSTALL_STAGING = YES
+KOALA_CAPICXX_SOMEIP_RUNTIME_INSTALL_TARGET = YES
+
+# CMake configuration options
+KOALA_CAPICXX_SOMEIP_RUNTIME_CONF_OPTS += 	-DUSE_INSTALLED_COMMONAPI=ON \
+                                            -DCommonAPI_DIR=$(STAGING_DIR)/usr/include/CommonAPI-3.2
+
+# Invoke the CMake package handling
+$(eval $(cmake-package))

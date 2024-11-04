@@ -1,4 +1,7 @@
 config BR2_PACKAGE_KOALA_WIFI_BLE
 	bool "Koala wifi ble service"
+	select BR2_PACKAGE_KOALA_CAPICXX_SOMEIP_RUNTIME
+	select BR2_PACKAGE_KOALA_VSOMEIP
+	select BR2_PACKAGE_KOALA_DLT
 	help
 		Koala wifi ble service

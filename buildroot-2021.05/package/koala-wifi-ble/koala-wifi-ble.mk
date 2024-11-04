@@ -10,18 +10,12 @@ KOALA_WIFI_BLE_SITE_METHOD = local
 KOALA_WIFI_BLE_LICENSE = GPL-2.0
 KOALA_WIFI_BLE_LICENSE_FILES = LICENSE
 
-# Set the target binary file name and source files
-KOALA_WIFI_BLE_BIN = koala-wifi-ble
-KOALA_WIFI_BLE_SOURCE = main.cpp  # Ensure correct reference
+KOALA_WIFI_BLE_INSTALL_TARGET = YES
 
-KOALA_WIFI_BLE_CFLAGS = -mcpu=c906fdv -march=rv64imafdcv0p7xthead -mcmodel=medany -mabi=lp64d
-KOALA_WIFI_BLE_LDFLAGS = -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -D_FILE_OFFSET_BITS=64
+KOALA_WIFI_BLE_DEPENDENCIES = koala-dlt koala-capicxx-someip-runtime
 
-# Define the build steps for the package, incorporating the custom CFLAGS and LDFLAGS
-define KOALA_WIFI_BLE_BUILD_CMDS
-	$(TARGET_CXX) $(TARGET_CXXFLAGS) $(KOALA_WIFI_BLE_CFLAGS) -o $(TARGET_DIR)/usr/bin/$(KOALA_WIFI_BLE_BIN) \
-	$(KOALA_WIFI_BLE_SITE)/$(KOALA_WIFI_BLE_SOURCE) $(KOALA_WIFI_BLE_LDFLAGS)
-endef
+# Set CMake configuration options
+KOALA_WIFI_BLE_CONF_OPTS += -DCommonAPI_DIR=$(STAGING_DIR)/usr \
+                            -DCMAKE_PREFIX_PATH=$(STAGING_DIR)/usr
 
-# Register the package in Buildroot
-$(eval $(generic-package))
+$(eval $(cmake-package))
