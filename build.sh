@@ -54,6 +54,19 @@ function get_toolchain()
     # Install Java
     sudo apt install openjdk-17-jdk -y
 
+    # Install capicxx tools
+    rm -rf host-tools/CommonAPI
+    mkdir -p host-tools/CommonAPI
+    
+    wget -P host-tools/CommonAPI https://github.com/COVESA/capicxx-core-tools/releases/download/3.2.15/commonapi_core_generator.zip
+    mkdir -p host-tools/CommonAPI/capicxx-core-tools
+    unzip host-tools/CommonAPI/commonapi_core_generator.zip -d host-tools/CommonAPI/capicxx-core-tools
+    rm -f host-tools/CommonAPI/commonapi_core_generator.zip
+
+    wget -P host-tools/CommonAPI https://github.com/COVESA/capicxx-someip-tools/releases/download/3.2.15/commonapi_someip_generator.zip
+    mkdir -p host-tools/CommonAPI/capicxx-someip-tools
+    unzip host-tools/CommonAPI/commonapi_someip_generator.zip -d host-tools/CommonAPI/capicxx-someip-tools
+    rm -f host-tools/CommonAPI/commonapi_someip_generator.zip
   fi
 }
 
