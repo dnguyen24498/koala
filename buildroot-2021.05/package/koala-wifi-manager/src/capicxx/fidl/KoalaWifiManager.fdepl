@@ -1,0 +1,24 @@
+import "platform:/plugin/org.genivi.commonapi.someip/deployment/CommonAPI-4-SOMEIP_deployment_spec.fdepl"
+import "KoalaWifiManager.fidl"
+
+define org.genivi.commonapi.someip.deployment for interface com.koala.WifiManager {
+    SomeIpServiceID = 4660
+
+    method active {
+        SomeIpMethodID = 1000
+        SomeIpReliable = true
+    }
+
+    attribute wifiState {
+        SomeIpGetterID = 10000
+        SomeIpNotifierID = 60000
+        SomeIpEventGroups = { 7000 }
+    }
+}
+
+define org.genivi.commonapi.someip.deployment for provider as Service {
+    instance com.koala.WifiManager {
+        InstanceId = "wifi-manager"
+        SomeIpInstanceID = 22000
+    }
+}

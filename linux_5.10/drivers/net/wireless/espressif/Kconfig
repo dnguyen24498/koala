@@ -1,0 +1,7 @@
+config WLAN_VENDOR_ESPRESSIF
+    tristate "Espressif WLAN driver"
+    depends on BT
+    default y
+    help 
+        This driver support for ESP32
+    

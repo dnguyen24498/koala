@@ -42,9 +42,5 @@ int cvi_board_init(void)
 	PINMUX_CONFIG(ADC1, XGPIOB_3);             // GP26 (ADC1)
 	PINMUX_CONFIG(USB_VBUS_DET, XGPIOB_6);     // GP27 (ADC2)
 
-	// Wifi & BT
-	pinmux_config(PINMUX_SDIO1);
-	PINMUX_CONFIG(JTAG_CPU_TCK, XGPIOA_18);
-
 	return 0;
 }

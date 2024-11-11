@@ -16,11 +16,13 @@
 
 &spi2 {
 	status = "okay";
+	num-cs = <2>;
+	
 	/delete-node/ spidev@0;
 
-	st7789v: st7789v@0 {
+	st7789v: st7789v@1 {
 		compatible = "sitronix,st7789v";
-		reg = <0>;
+		reg = <1>;
 		status = "okay";
 		spi-max-frequency = <48000000>;
 		spi-cpol;
@@ -47,7 +49,6 @@
 
 &uart1 {
 	status = "okay";
-	
 };
 
 &uart2 {
@@ -61,14 +62,44 @@
 / {
 	model = "Milk-V Duo256M";
 
-	/* nav_button {
-		compatible = "koala,multy-way-5d";
-		up-gpios = <&porta 22 GPIO_ACTIVE_LOW>;
-		down-gpios = <&porta 23 GPIO_ACTIVE_LOW>;
-		left-gpios = <&porta 24 GPIO_ACTIVE_LOW>;
-		right-gpios = <&porta 25 GPIO_ACTIVE_LOW>;
-		center-gpios = <&porta 26 GPIO_ACTIVE_LOW>;
-	}; */
-	
+	gpio-keys {
+		compatible = "gpio-keys";
+
+		up {
+			label = "Up";
+			gpios = <&porta 22 GPIO_ACTIVE_LOW>;
+			linux,code = <103>;
+		};
+
+		down {
+			label = "Down";
+			gpios = <&porta 23 GPIO_ACTIVE_LOW>;
+			linux,code = <108>;
+		};
+
+		left {
+			label = "Left";
+			gpios = <&porta 24 GPIO_ACTIVE_LOW>;
+			linux,code = <105>;
+		};
+
+		right {
+			label = "Right";
+			gpios = <&porta 25 GPIO_ACTIVE_LOW>;
+			linux,code = <106>;
+		};
+
+		enter {
+			label = "Enter";
+			gpios = <&porta 26 GPIO_ACTIVE_LOW>;
+			linux,code = <28>;
+		};
+
+		backspace {
+			label = "Backspace";
+			gpios = <&porta 27 GPIO_ACTIVE_LOW>;
+			linux,code = <14>;
+		};
+	};
 };
 

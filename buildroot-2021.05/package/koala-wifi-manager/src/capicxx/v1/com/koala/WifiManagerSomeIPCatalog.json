@@ -1,0 +1,8 @@
+{
+    "com.koala.WifiManager" : {
+        "service_id": 4660,
+        "instances" : {
+            "wifi-manager": 22000
+        }
+    }
+}

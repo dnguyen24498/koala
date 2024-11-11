@@ -1,0 +1,22 @@
+package com.koala
+
+interface WifiManager {
+    version { major 1 minor 0 }
+
+    attribute WifiManagerDataTypes.WifiState wifiState readonly
+
+    method active {
+        in {
+            WifiManagerDataTypes.WifiState wifiState
+        }
+    }
+}
+
+typeCollection WifiManagerDataTypes {
+    version { major 1 minor 0 }
+
+    enumeration WifiState {
+        ON
+        OFF
+    } 
+}

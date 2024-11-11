@@ -35,4 +35,8 @@ dmesg -n 4
 #koala custom modules
 #insmod /mnt/system/ko/st7567s-cog.ko
 #insmod /mnt/system/ko/multy-way-5d.ko
+
+# wlan setup
+insmod esp32_spi.ko resetpin=498 raw_tp_mode=0
+
 exit $?
